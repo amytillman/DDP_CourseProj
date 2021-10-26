@@ -1,0 +1,53 @@
+Reproducible Pitch
+========================================================
+author: Amy T.
+date: October 26, 2021
+autosize: true
+
+
+Background
+========================================================
+
+This R presentation is for the JHU Coursera Developing Data Products Course Project.
+
+Shiny application is available here: https://amytillman.shinyapps.io/DDPShinyApp/  
+
+R source code is available here: https://github.com/amytillman/DDP_CourseProj  
+
+
+Shiny App
+========================================================
+
+The Shiny application is hosted on a platform called shinyapps.io and 
+has two input files: ui.R and server.R.  
+
+The application uses the diamonds dataset from the ggplot2 R package along with 
+the following R packages: rsconnect (used to publish/host the app on shinyapps.io),
+shiny, tidyverse (includes ggplot2), RColorBrewer, and patchwork.
+
+
+Diamond data
+========================================================
+
+Diamond price in the diamonds dataset ranges from 326 to 18,823 US dollars.
+```{r}
+library(tidyverse)
+data("diamonds")
+summary(diamonds[,c("price","carat")])
+```
+
+
+Shiny App cont'd
+========================================================
+
+The 3 scatterplots in this Shiny app display diamond price vs. carat 
+for diamond cut, color, and clarity, respectively.
+
+In order to view different diamond characteristics based on price range, the user 
+will first specify a minimum and maximum diamond price in US dollars. 
+
+Next, the user will press the Submit button which will prompt a refresh of the 3 
+scatterplots based on the user-specified diamond price range.
+
+Enjoy some diamond exploration while using this Shiny app!
+
